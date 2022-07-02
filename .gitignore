@@ -1,0 +1,4 @@
+.terraform
+terraform.tfstate
+inventory
+terraform/variables.tf
