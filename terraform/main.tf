@@ -118,7 +118,7 @@ resource "vkcs_networking_secgroup_rule" "testhttp" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
-  port_range_min    = 8080
+  port_range_min    = 8000
   port_range_max    = 8080
   remote_ip_prefix  = "0.0.0.0/0"
   security_group_id = "${vkcs_networking_secgroup.testhttp.id}"
