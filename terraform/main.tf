@@ -85,6 +85,7 @@ resource "openstack_compute_instance_v2" "test-instance" {
 
   security_groups = [
     "default",
+    "testhttp",
     "ssh+www"
   ]
 
@@ -104,3 +105,23 @@ resource "openstack_compute_instance_v2" "test-instance" {
     uuid = "${openstack_networking_network_v2.generic.id}"
   }
 }
+
+
+resource "vkcs_networking_secgroup" "testhttp" {
+  name        = "testhttp"
+  description = "http port for tests"
+}
+
+
+
+resource "vkcs_networking_secgroup_rule" "testhttp" {
+  direction         = "ingress"
+  ethertype         = "IPv4"
+  protocol          = "tcp"
+  port_range_min    = 8080
+  port_range_max    = 8080
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = "${vkcs_networking_secgroup.testhttp.id}"
+}
+
+
