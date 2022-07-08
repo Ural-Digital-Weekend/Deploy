@@ -9,10 +9,10 @@ source ~/<projec_name>-openrc-v3.sh
 ```
 Скачивание и установка binary
 ```
-wget http://hub.mcs.mail.ru/repository/terraform-binary/mirror/1.1.9/terraform_1.1.9_linux_arm64.zip
+wget http://hub.mcs.mail.ru/repository/terraform-binary/mirror/1.1.9/terraform_1.1.9_linux_amd64.zip
 unzip terraform_1.1.9_linux_amd64.zip
 cp terraform /usr/local/bin
-chmod +x /usr/local/terraform 
+chmod +x /usr/local/bin/terraform 
 ```
 Настройка terraform
 ```
